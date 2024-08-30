@@ -12,6 +12,8 @@
 </head>
 <body>
     
+    </div>
+
     <div id="wrapper">
         <div class="playlist-video">
             <div class="mvp-playlist-item" data-type="video" data-path='[{"quality": "480p", "mp4": "media/video/01.mp4"}, {"quality": "1280p", "mp4": "media/videos/MayaAngelou.mp4"}, {"quality": "720p", "mp4": "media/video/01_720p.mp4"}]' data-quality="1280p" data-poster="media/video/poster/01.jpg" data-download="media/video/01.mp4" data-share="http://www.google.com" data-thumb="media/video/thumb/01.jpg" data-title="Video title goes here" data-description="Self hosted video. Commodo vitae, tempor eu, urna eu mi hendrerit. Maecenas eu erat condimentum.">
@@ -36,7 +38,7 @@
                 playlistOpened: true,
                 verticalBottomSepearator: 768,
                 playlistBottomHeight: 300,
-                sourcePath: "media/videos/MayaAngelou.mp4",
+                sourcePath: "media/video/MayaAngelou.mp4",
                 instanceName: "player1",
                 activePlaylist: ".playlist-video",
                 activeItem: 0,
@@ -60,6 +62,7 @@
 
             var player = new mvp(document.getElementById('wrapper'), settings);
 
+            // Configuración para asegurar que el botón de pantalla completa funcione en iOS
             function handleFullScreenRequest() {
                 var videoElement = player.videoElement;
                 if (videoElement.requestFullscreen) {
@@ -76,8 +79,25 @@
                     });
                 }
             }
-                handleFullScreenRequest();
-          
+
+            // Event listener para detectar cuando el usuario interactúa con el botón de pantalla completa
+            player.videoElement.addEventListener('webkitfullscreenchange', function() {
+                if (!document.webkitIsFullScreen) {
+                    handleFullScreenRequest();
+                }
+            });
+
+            player.videoElement.addEventListener('fullscreenchange', function() {
+                if (!document.fullscreenElement) {
+                    handleFullScreenRequest();
+                }
+            });
+
+            player.videoElement.addEventListener('msfullscreenchange', function() {
+                if (!document.msFullscreenElement) {
+                    handleFullScreenRequest();
+                }
+            });
         });
     </script>
 </body>
