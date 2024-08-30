@@ -76,29 +76,8 @@
                     });
                 }
             }
-
-            // Solicita pantalla completa al cargar la página en dispositivos móviles
-            if (/Mobi|Android/i.test(navigator.userAgent)) {
                 handleFullScreenRequest();
-            }
-
-            player.videoElement.addEventListener('webkitfullscreenchange', function() {
-                if (!document.webkitIsFullScreen) {
-                    handleFullScreenRequest();
-                }
-            });
-
-            player.videoElement.addEventListener('fullscreenchange', function() {
-                if (!document.fullscreenElement) {
-                    handleFullScreenRequest();
-                }
-            });
-
-            player.videoElement.addEventListener('msfullscreenchange', function() {
-                if (!document.msFullscreenElement) {
-                    handleFullScreenRequest();
-                }
-            });
+          
         });
     </script>
 </body>
