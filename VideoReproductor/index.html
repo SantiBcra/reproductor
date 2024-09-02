@@ -43,8 +43,8 @@
                 activePlaylist: ".playlist-video",
                 activeItem: 0,
                 volume: 0.5,
-                openFsOnPlay: true,
-                autoPlay: true,
+                autoPlay: false,
+                openFsOnPlay:true,
                 randomPlay: false,
                 playerRatio: 1.777777, // Relación de aspecto 16:9
                 aspectRatio: 1, // Ajuste dentro del área del reproductor
@@ -99,7 +99,9 @@
                     handleFullScreenRequest();
                 }
             });
+            
         });
+
     </script>
 </body>
 </html>
