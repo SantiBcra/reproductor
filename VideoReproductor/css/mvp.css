@@ -138,6 +138,7 @@ button.mvp-btn-reset{
 
 .mvp-player a{
 	box-shadow: none!important;
+    
 }
 
 
@@ -165,11 +166,13 @@ button.mvp-btn-reset{
 .mvp-player{
 	position: relative;
     width: 100%;
-    /*min-width: 350px;*/
+    min-width: 1000px;
     margin: 0 auto;
-    /*z-index: 1;*/
+    
     min-height: 200px;
     display: none;
+    position: absolute!important;
+    height: 100%!important;
 }
 @supports (container-type: inline-size) {
     .mvp-player-wrap{
@@ -179,9 +182,9 @@ button.mvp-btn-reset{
 
 
 .mvp-player-wrap{
-    position: relative;
-    height: 100%;
-    width: 100%;
+    position: absolute;
+    
+    width: 130%;
     transition: opacity 0.3s ease-in-out;
     opacity: 0;
 }

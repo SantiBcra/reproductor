@@ -32,8 +32,9 @@
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
             var settings = {
+               
                 playlistPosition: 'vb',
-                combinePlayerRatio: true,
+                showControlsBeforeStart: true,
                 playlistScrollType: 'perfect-scrollbar',
                 playlistOpened: true,
                 verticalBottomSepearator: 768,
@@ -42,12 +43,16 @@
                 instanceName: "player1",
                 activePlaylist: ".playlist-video",
                 activeItem: 0,
-                volume: 0.5,
-                autoPlay: false,
+                playerRatio:1,
+                
+                combinePlayerRatio:false,
                 openFsOnPlay:true,
+                volume: 0.5,
+                hidePlaylistOnFullscreenEnter:true,
                 randomPlay: false,
-                playerRatio: 1.777777, // Relación de aspecto 16:9
-                aspectRatio: 1, // Ajuste dentro del área del reproductor
+
+                
+    
                 mediaEndAction: 'custom',
                 mediaEndActionCustom: `
                     <div class="mvp-custom-wrap">
@@ -99,9 +104,7 @@
                     handleFullScreenRequest();
                 }
             });
-            
         });
-
     </script>
 </body>
 </html>
