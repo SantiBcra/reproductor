@@ -1,109 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reproductor de Video</title>
-    <link rel="stylesheet" type="text/css" href="css/perfect-scrollbar.css" media="all" />
-    <link rel="stylesheet" type="text/css" href="css/mvp.css" />
-    <link rel="stylesheet" type="text/css" href="css/custom.css" /> <!-- Agregar CSS personalizado -->
-    <script src="js/new.js"></script>
-    <script src="media/share_manager.js"></script>
+    <title>Reproductor Fullscreen</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: black;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
-    
-    </div>
-
-    <div id="wrapper">
-        <div class="playlist-video">
-            <div class="mvp-playlist-item" data-type="video" data-path='[{"quality": "480p", "mp4": "media/video/01.mp4"}, {"quality": "1280p", "mp4": "media/videos/MayaAngelou.mp4"}, {"quality": "720p", "mp4": "media/video/01_720p.mp4"}]' data-quality="1280p" data-poster="media/video/poster/01.jpg" data-download="media/video/01.mp4" data-share="http://www.google.com" data-thumb="media/video/thumb/01.jpg" data-title="Video title goes here" data-description="Self hosted video. Commodo vitae, tempor eu, urna eu mi hendrerit. Maecenas eu erat condimentum.">
-                <div class="mvp-subtitles">
-                    <div data-label="English" data-src="media/subtitles/sintel-en.vtt" data-default></div>
-                    <div data-label="Spanish" data-src="media/subtitles/sintel-es.vtt"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="fullscreen-message">
-        <p>Para una mejor experiencia, visualiza el video en pantalla completa.</p>
-    </div>
+    <video id="myVideo" autoplay>
+        <source src="media/videos/MayaAngelou.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
-            var settings = {
-               
-                playlistPosition: 'vb',
-                showControlsBeforeStart: true,
-                playlistScrollType: 'perfect-scrollbar',
-                playlistOpened: true,
-                verticalBottomSepearator: 768,
-                playlistBottomHeight: 300,
-                sourcePath: "media/video/MayaAngelou.mp4",
-                instanceName: "player1",
-                activePlaylist: ".playlist-video",
-                activeItem: 0,
-                playerRatio:1,
-                
-                combinePlayerRatio:false,
-                openFsOnPlay:true,
-                volume: 0.5,
-                hidePlaylistOnFullscreenEnter:true,
-                randomPlay: false,
+        document.addEventListener("DOMContentLoaded", function() {
+            var videoElement = document.getElementById("myVideo");
 
-                
-    
-                mediaEndAction: 'custom',
-                mediaEndActionCustom: `
-                    <div class="mvp-custom-wrap">
-                        <div class="mvp-custom-content">
-                            <div class="mvp-custom-message">¡Gracias por vernos!</div>
-                            <div class="mvp-custom-link-wrap" title="Más información y registro">
-                                <a class="mvp-custom-link" href="https://pay.critiquecrafters.com/b/cN2eXj9hE19C5ckbIJ" target="_blank">Más información y registro</a>
-                            </div>
-                        </div>
-                    </div>
-                `
-            };
-
-            var player = new mvp(document.getElementById('wrapper'), settings);
-
-            // Configuración para asegurar que el botón de pantalla completa funcione en iOS
-            function handleFullScreenRequest() {
-                var videoElement = player.videoElement;
-                if (videoElement.requestFullscreen) {
-                    videoElement.requestFullscreen().catch(err => {
-                        console.error('Error attempting to enable full-screen mode:', err);
-                    });
-                } else if (videoElement.webkitRequestFullscreen) { // Safari
-                    videoElement.webkitRequestFullscreen().catch(err => {
-                        console.error('Error attempting to enable full-screen mode:', err);
-                    });
-                } else if (videoElement.msRequestFullscreen) { // IE11
-                    videoElement.msRequestFullscreen().catch(err => {
-                        console.error('Error attempting to enable full-screen mode:', err);
-                    });
-                }
-            }
-
-            // Event listener para detectar cuando el usuario interactúa con el botón de pantalla completa
-            player.videoElement.addEventListener('webkitfullscreenchange', function() {
-                if (!document.webkitIsFullScreen) {
-                    handleFullScreenRequest();
-                }
+            // Al abrir la página, intenta activar el modo fullscreen
+            videoElement.requestFullscreen().catch(err => {
+                console.log(Error al activar fullscreen: ${err.message});
             });
 
-            player.videoElement.addEventListener('fullscreenchange', function() {
-                if (!document.fullscreenElement) {
-                    handleFullScreenRequest();
-                }
-            });
-
-            player.videoElement.addEventListener('msfullscreenchange', function() {
-                if (!document.msFullscreenElement) {
-                    handleFullScreenRequest();
-                }
-            });
+            // Reproducir el video automáticamente
+            videoElement.play();
         });
     </script>
 </body>
