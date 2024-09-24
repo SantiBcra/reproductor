@@ -163,16 +163,20 @@ button.mvp-btn-reset{
     background: rgb(3 3 3 / 10%);
 }
 
-.mvp-player{
-	position: relative;
-    width: 100%;
-    min-width: 100px;
+.mvp-player {
+    position: relative;
+    width: 100%; 
+    height: 100vh; /* Ocupa todo el alto de la pantalla */
+    max-height: 100vh; /* Para evitar que se desborde */
+    aspect-ratio: 9 / 16; /* Define la relación 9:16 */
     margin: 0 auto;
-    
-    min-height: 500px;
-    display: none;
-    position: absolute!important;
-    height: 100%!important;
+    display: block;
+}
+
+@media screen and (orientation: landscape) {
+    .mvp-player {
+        height: 100vw; /* En modo landscape, ajusta la altura al ancho de la pantalla */
+    }
 }
 @supports (container-type: inline-size) {
     .mvp-player-wrap{
