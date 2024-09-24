@@ -166,10 +166,10 @@ button.mvp-btn-reset{
 .mvp-player{
 	position: relative;
     width: 100%;
-    min-width: 1000px;
+    min-width: 100px;
     margin: 0 auto;
     
-    min-height: 200px;
+    min-height: 500px;
     display: none;
     position: absolute!important;
     height: 100%!important;
