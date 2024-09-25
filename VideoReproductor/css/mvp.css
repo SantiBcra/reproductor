@@ -138,7 +138,6 @@ button.mvp-btn-reset{
 
 .mvp-player a{
 	box-shadow: none!important;
-    
 }
 
 
@@ -163,20 +162,14 @@ button.mvp-btn-reset{
     background: rgb(3 3 3 / 10%);
 }
 
-.mvp-player {
-    position: relative;
-    width: 100%; 
-    height: 100vh; /* Ocupa todo el alto de la pantalla */
-    /* Para evitar que se desborde */
-    aspect-ratio: 9 / 16; /* Define la relación 9:16 */
+.mvp-player{
+	position: relative;
+    width: 100%;
+    min-width: 350px;
     margin: 0 auto;
-    display: block;
-}
-
-@media screen and (orientation: landscape) {
-    .mvp-player {
-        height: 100vw; /* En modo landscape, ajusta la altura al ancho de la pantalla */
-    }
+    /*z-index: 1;*/
+    min-height: 400px;
+    display: none;
 }
 @supports (container-type: inline-size) {
     .mvp-player-wrap{
@@ -186,9 +179,9 @@ button.mvp-btn-reset{
 
 
 .mvp-player-wrap{
-    position: absolute;
-    
-    width: 130%;
+    position: relative;
+    height: 100%;
+    width: 100%;
     transition: opacity 0.3s ease-in-out;
     opacity: 0;
 }
