@@ -16,7 +16,7 @@ body {
     z-index: -1;
 }
 #bg-video {
-    min-width: 100%;
+    min-width: 45%;
     min-height: 100%;
     width: auto;
     height: auto;
