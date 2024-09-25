@@ -178,7 +178,7 @@ button.mvp-btn-reset{
     margin: 0;
     
 
-      object-fit: cover;  /* Asegura que el video cubra bien el espacio */
+/*       object-fit: cover;  /* Asegura que el video cubra bien el espacio */ */
 }
 @supports (container-type: inline-size) {
     .mvp-player-wrap{
