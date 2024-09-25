@@ -375,9 +375,15 @@ button.mvp-menu-item{
 }
 
 /* subtitles */
-
 .mvp-subtitles {
-    display: block; /* Cambiado a block para mostrar los subtítulos */
+    display: flex; /* Flexbox para alinear contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    position: absolute; /* Para que ocupe toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ocupa el 100% del ancho */
+    height: 100vh; /* Ocupa el 100% del alto */
 }
 
 .mvp-subtitle-holder-inner {
