@@ -163,6 +163,7 @@ button.mvp-btn-reset{
 }
 
 .mvp-player{
+	z-index: 1
 /* 	position: relative;
 	z-index: 1 */
 /*     width: 100%; 
