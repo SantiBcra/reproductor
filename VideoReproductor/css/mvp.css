@@ -163,13 +163,13 @@ button.mvp-btn-reset{
 }
 
 .mvp-player{
-	position: relative;
+/* 	position: relative;
     width: 100%;
     min-width: 350px;
-    margin: 0 auto;
+    margin: 0 auto; */
     /*z-index: 1;*/
-    min-height: 400px;
-    display: none;
+/*     min-height: 400px;
+    display: none; */
 }
 @supports (container-type: inline-size) {
     .mvp-player-wrap{
