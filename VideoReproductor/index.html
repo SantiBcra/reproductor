@@ -37,42 +37,42 @@
             var settings = {
                  // gDriveAppId: "AIzaSyDMCGHB4N2fix7tvzGLFyRJjUZ2gHlQCrk",
                 useMobileNativePlayer: true,
-               //  mobileSeekbarMinWidth: 500,
-               //  embedSrc: "0",
-               //  mediaEndAction:'rewind',
-               //  playlistPosition: 'vb',
-               //  combinePlayerRatio: true,
-               //  playlistScrollType: 'perfect-scrollbar',
-               //  playlistOpened: false,
-               //  showControlsBeforeStart: false,
-               //  verticalBottomSepearator: 768,
-               //  playlistBottomHeight: 300,
+                mobileSeekbarMinWidth: 500,
+                embedSrc: "0",
+                mediaEndAction:'rewind',
+                playlistPosition: 'vb',
+                combinePlayerRatio: true,
+                playlistScrollType: 'perfect-scrollbar',
+                playlistOpened: false,
+                showControlsBeforeStart: false,
+                verticalBottomSepearator: 768,
+                playlistBottomHeight: 300,
                sourcePath: "media/video/MayaAngelou.mp4",
                 instanceName: "player1",
                 activePlaylist: ".playlist-video",
-               // playerRatio: 0.5,
-               //  aspectRatio: 0, // Relación 9:16
+               playerRatio: 0.5,
+                aspectRatio: 0, // Relación 9:16
                activeItem: 0,
-               //  volume: 0.5,
+                volume: 0.5,
                 
-                //autoPlay: true,
-                // randomPlay: false,
-                //  elementsVisibilityArr:[
-                //     {width:600, elements:['play', 'fullscreen', 'settings','cc', 'volume' ]},
-                //     {width:400, elements:['play', 'fullscreen', 'settings', 'cc', 'volume' ]}
-                //                     ],
+                autoPlay: true,
+                randomPlay: false,
+                 elementsVisibilityArr:[
+                    {width:600, elements:['play', 'fullscreen', 'settings','cc', 'volume' ]},
+                    {width:400, elements:['play', 'fullscreen', 'settings', 'cc', 'volume' ]}
+                                    ],
                 
-                // mediaEndAction: 'custom',
-                // mediaEndActionCustom: `
-                //     <div class="mvp-custom-wrap">
-                //         <div class="mvp-custom-content">
-                //             <div class="mvp-custom-message">¡Gracias por vernos!</div>
-                //             <div class="mvp-custom-link-wrap" title="Más información y registro">
-                //                 <a class="mvp-custom-link" href="https://pay.critiquecrafters.com/b/cN2eXj9hE19C5ckbIJ" target="_blank">Más información y registro</a>
-                //             </div>
-                //         </div>
-                //     </div>
-                // `
+                mediaEndAction: 'custom',
+                mediaEndActionCustom: `
+                    <div class="mvp-custom-wrap">
+                        <div class="mvp-custom-content">
+                            <div class="mvp-custom-message">¡Gracias por vernos!</div>
+                            <div class="mvp-custom-link-wrap" title="Más información y registro">
+                                <a class="mvp-custom-link" href="https://pay.critiquecrafters.com/b/cN2eXj9hE19C5ckbIJ" target="_blank">Más información y registro</a>
+                            </div>
+                        </div>
+                    </div>
+                `
             };
 
             var player = new mvp(document.getElementById('wrapper'), settings);
