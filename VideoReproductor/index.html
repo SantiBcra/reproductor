@@ -23,10 +23,10 @@
 
         <div class="playlist-video">
             <div class="mvp-playlist-item" data-type="video" data-path='[{"quality": "480p", "mp4": "media/videos/1.mp4"}, {"quality": "1280p", "mp4": "media/videos/1.mp4"}, {"quality": "720p", "mp4": "media/videos/OtroVideo.mp4"}]' data-quality="1280p" data-poster="media/videos/ing.png" data-download="media/video/02.mp4" data-share="http://www.google.com" data-thumb="media/video/thumb/02.jpg" data-title="Otro Video" data-description="Descripción del segundo video.">
-                <!-- <div class="mvp-subtitles">
+                 <div class="mvp-subtitles">
                     <div data-label="English" data-src="media/subtitles/otrovideo-en.vtt" data-default></div>
                     <div data-label="Spanish" data-src="media/subtitles/otrovideo-es.vtt"></div>
-                </div> -->
+                </div> 
             </div>
         </div>
     </div>
@@ -38,7 +38,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
             var settings1 = {
-                useMobileNativePlayer: true,
+                useMobileNativePlayer: false,
                 mobileSeekbarMinWidth: 500,
                 embedSrc: "0",
                 openFsOnPlay: true,
@@ -78,7 +78,7 @@
             };
 
             var settings2 = {
-                useMobileNativePlayer: true,
+                useMobileNativePlayer: false,
                 mobileSeekbarMinWidth: 500,
                 embedSrc: "0",
                 openFsOnPlay: true,
