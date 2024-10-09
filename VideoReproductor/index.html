@@ -11,35 +11,38 @@
     <script src="media/share_manager.js"></script>
 </head>
 <body>
-    
-    </div>
-
     <div id="wrapper">
         <div class="playlist-video">
-<!--            <div class="mvp-playlist-item" data-type="gdrive_folder" data-path="1Is7BIPNtjc3xU1Lcg8cqppNyYeYzx8LG"></div> -->
-            <div class="mvp-playlist-item" data-type="video" data-path='[{"quality": "480p", "mp4": "media/videos/MayaAngelou.mp4"}, {"quality": "1280p", "mp4": "media/videos/MayaAngelou.mp4"}, {"quality": "720p", "mp4": "media/videos/MayaAngelou.mp4"}]' data-quality="1280p" data-poster="media/video/poster/01.jpg" data-download="media/video/01.mp4" data-share="http://www.google.com" data-thumb="media/video/thumb/01.jpg" data-title="Video title goes here" data-description="Self hosted video. Commodo vitae, tempor eu, urna eu mi hendrerit. Maecenas eu erat condimentum.">
-<!--                 <div class="mvp-subtitles">
+            <div class="mvp-playlist-item" data-type="video" data-path='[{"quality": "480p", "mp4": "media/videos/MayaAngelou.mp4"}, {"quality": "1280p", "mp4": "media/videos/MayaAngelou.mp4"}, {"quality": "720p", "mp4": "media/videos/MayaAngelou.mp4"}]' data-quality="1280p" data-poster="media/videos/poster/esp.png" data-download="media/video/01.mp4" data-share="http://www.google.com" data-thumb="media/video/thumb/01.jpg" data-title="Video title goes here" data-description="Self hosted video. Commodo vitae, tempor eu, urna eu mi hendrerit. Maecenas eu erat condimentum.">
+                <div class="mvp-subtitles">
                     <div data-label="English" data-src="media/subtitles/sintel-en.vtt" data-default></div>
                     <div data-label="Spanish" data-src="media/subtitles/sintel-es.vtt"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="playlist-video">
+            <div class="mvp-playlist-item" data-type="video" data-path='[{"quality": "480p", "mp4": "media/videos/1.mp4"}, {"quality": "1280p", "mp4": "media/videos/1.mp4"}, {"quality": "720p", "mp4": "media/videos/OtroVideo.mp4"}]' data-quality="1280p" data-poster="media/videos/poster/ing.png" data-download="media/video/02.mp4" data-share="http://www.google.com" data-thumb="media/video/thumb/02.jpg" data-title="Otro Video" data-description="Descripción del segundo video.">
+                <!-- <div class="mvp-subtitles">
+                    <div data-label="English" data-src="media/subtitles/otrovideo-en.vtt" data-default></div>
+                    <div data-label="Spanish" data-src="media/subtitles/otrovideo-es.vtt"></div>
                 </div> -->
             </div>
         </div>
     </div>
-    
 
     <div class="fullscreen-message">
         <p>Para una mejor experiencia, visualiza el video en pantalla completa.</p>
     </div>
 
     <script>
-        
         document.addEventListener("DOMContentLoaded", function(event) {
-            var settings = {
-                 // gDriveAppId: "AIzaSyDMCGHB4N2fix7tvzGLFyRJjUZ2gHlQCrk",
+            var settings1 = {
                 useMobileNativePlayer: true,
                 mobileSeekbarMinWidth: 500,
                 embedSrc: "0",
-                mediaEndAction:'rewind',
+                openFsOnPlay: true,
+                mediaEndAction: 'rewind',
                 playlistPosition: 'vb',
                 combinePlayerRatio: true,
                 playlistScrollType: 'perfect-scrollbar',
@@ -47,21 +50,20 @@
                 showControlsBeforeStart: false,
                 verticalBottomSepearator: 768,
                 playlistBottomHeight: 300,
-               sourcePath: "media/video/MayaAngelou.mp4",
+                sourcePath: "media/videos/MayaAngelou.mp4",
                 instanceName: "player1",
-                activePlaylist: ".playlist-video",
-               playerRatio: 0.5,
-                aspectRatio: 0, // Relación 9:16
-               activeItem: 0,
+                activePlaylist: ".playlist-video:first-child", // Primer reproductor
+                playerRatio: 1,
+                aspectRatio: 1, // Relación 9:16
+                activeItem: 0,
                 volume: 0.5,
-                
-                autoPlay: true,
+                autoPlay: false,
                 randomPlay: false,
-                 elementsVisibilityArr:[
-                    {width:600, elements:['play', 'fullscreen', 'settings','cc', 'volume' ]},
-                    {width:400, elements:['play', 'fullscreen', 'settings', 'cc', 'volume' ]}
-                                    ],
-                
+                showControlsBeforeStart: true,
+                elementsVisibilityArr: [
+                    { width: 600, elements: ['play', 'fullscreen', 'settings', 'cc', 'volume'] },
+                    { width: 400, elements: ['play', 'fullscreen', 'settings', 'cc', 'volume'] }
+                ],
                 mediaEndAction: 'custom',
                 mediaEndActionCustom: `
                     <div class="mvp-custom-wrap">
@@ -75,8 +77,47 @@
                 `
             };
 
-            var player = new mvp(document.getElementById('wrapper'), settings);
+            var settings2 = {
+                useMobileNativePlayer: true,
+                mobileSeekbarMinWidth: 500,
+                embedSrc: "0",
+                openFsOnPlay: true,
+                mediaEndAction: 'rewind',
+                playlistPosition: 'vb',
+                combinePlayerRatio: true,
+                playlistScrollType: 'perfect-scrollbar',
+                playlistOpened: false,
+                showControlsBeforeStart: false,
+                verticalBottomSepearator: 768,
+                playlistBottomHeight: 300,
+                sourcePath: "media/videos/OtroVideo.mp4",
+                instanceName: "player2",
+                activePlaylist: ".playlist-video:last-child", // Segundo reproductor
+                playerRatio: 1,
+                aspectRatio: 1, // Relación 9:16
+                activeItem: 0,
+                volume: 0.5,
+                autoPlay: false,
+                randomPlay: false,
+                elementsVisibilityArr: [
+                    { width: 600, elements: ['play', 'fullscreen', 'settings', 'cc', 'volume'] },
+                    { width: 400, elements: ['play', 'fullscreen', 'settings', 'cc', 'volume'] }
+                ],
+                mediaEndAction: 'custom',
+                mediaEndActionCustom: `
+                    <div class="mvp-custom-wrap">
+                        <div class="mvp-custom-content">
+                            <div class="mvp-custom-message">¡Gracias por vernos!</div>
+                            <div class="mvp-custom-link-wrap" title="Más información y registro">
+                                <a class="mvp-custom-link" href="https://pay.critiquecrafters.com/b/cN2eXj9hE19C5ckbIJ" target="_blank">Más información y registro</a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            };
 
+            var player1 = new mvp(document.getElementById('wrapper').children[0], settings1); // Primer reproductor
+            var player2 = new mvp(document.getElementById('wrapper').children[1], settings2); // Segundo reproductor
         });
     </script>
 </body>
